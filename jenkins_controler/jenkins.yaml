@@ -19,7 +19,11 @@ tool:
           - sonarRunnerInstaller:
               id: "5.0.1.3006"
 
+
 unclassified:
+  locale:
+    ignoreAcceptLanguage: true
+    systemLocale: “en_EN”
   location:
     url: "http://192.168.44.44:8880/"
   sonarGlobalConfiguration:
