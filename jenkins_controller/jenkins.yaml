@@ -70,3 +70,24 @@ unclassified:
       triggers:
         skipScmCause: false
         skipUpstreamCause: false
+agent: 
+  label: agent
+  nodeUsage: only
+  workspace:
+    $class: "jenkins.plugins.nodejs.tools.NodeJSWorkspace"
+    remoteFS: /home/jenkins/agent
+    tunnel: 192.168.44.44:2222
+    tunnelAuthetication: 0
+    tunnelCrdentials: 
+    launcher: org.jenkinsci.plugins.workflow.steps.ssh.SSHLancher
+    verifications: [nonVerifingKeyVerificationStrategy]
+    nodeProperties: []
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+        id: "artifactory"
+        username: "admin"
+        password: "password"
+        scope: GLOBAL

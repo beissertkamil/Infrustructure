@@ -1,8 +1,8 @@
 FROM jenkins/ssh-agent:5.12.0-jdk17
 ENV DEBIAN_FRONTEND=noninteractive
 USER root
+RUN groupadd -g 997 docker && usermod -aG docker jenkins
 RUN apt-get update && apt-get install -y curl python3-pip unzip ansible git
-RUN GROUPADD -g <GID DOCKER HOST> docker && usermode -aG docker jenkins
 RUN usermod -aG docker jenkins
 RUN curl -fsSL https://get.docker.com -o get-docker  | sh 
 RUN sh get-docker.sh
