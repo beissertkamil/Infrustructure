@@ -13,8 +13,8 @@ services:
   sonarqube:
     image: sonarqube:10.2.1-community
     container_name: sonarqube
-    depends_on: 
-      - jenkins
+    #depends_on: 
+     # - jenkins
     ports:
       - "9000:9000"
     restart: always
@@ -22,8 +22,8 @@ services:
   jenkins_agent:
     build: ./jenkins_agent
     container_name: jenkins_agent
-    depends_on:
-      - jenkins
+    #depends_on:
+     # - jenkins
     ports:
       - "2222:22"
     volumes:
